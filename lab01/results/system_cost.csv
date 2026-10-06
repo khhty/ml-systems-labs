@@ -1,0 +1,3 @@
+model,train_median_s,infer_median_ms,size_bytes,size_kb,rss_before_mib,peak_train_mib,peak_infer_mib
+LogisticRegression,0.4388,0.0573,1055,1.03,230.6,231.1,230.6
+RandomForest,0.5254,6.1039,290889,284.07,232.0,232.1,232.1

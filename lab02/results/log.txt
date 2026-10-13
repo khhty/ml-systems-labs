@@ -1,0 +1,365 @@
+=== Task 1 ===
+X_tr: (1257, 64) X_te: (540, 64)
+Y_tr: (1257, 10) Y_te: (540, 10)
+Pixel range: 0.0 - 1.0
+Example label: 0 -> [1. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+
+=== Task 2 ===
+
+W = 16
+  W1: (64, 16)
+  b1: (16,)
+  W2: (16, 16)
+  b2: (16,)
+  W3: (16, 10)
+  b3: (10,)
+  Total parameters: 1482
+
+W = 64
+  W1: (64, 64)
+  b1: (64,)
+  W2: (64, 64)
+  b2: (64,)
+  W3: (64, 10)
+  b3: (10,)
+  Total parameters: 8970
+
+=== Task 3 ===
+W=16: output shape (32, 10), max|row sum - 1| = 2.22e-16
+W=64: output shape (32, 10), max|row sum - 1| = 2.22e-16
+Forward pass checks passed
+
+=== Task 4 ===
+W=16: untrained loss = 2.2988   ln(10) = 2.3026
+W=64: untrained loss = 2.3158   ln(10) = 2.3026
+
+=== Task 5: gradient check ===
+param  index            analytic       numeric    rel.err
+W1     (43, 9)     -1.477230e-03 -1.477230e-03   5.71e-09  OK
+W1     (58, 3)     -1.349915e-03 -1.349915e-03   6.73e-09  OK
+W1     (22, 12)     5.093874e-04  5.093874e-04   5.23e-09  OK
+W1     (50, 13)     1.335881e-03  1.335881e-03   2.97e-09  OK
+W3     (14, 0)      1.088817e-03  1.088817e-03   1.76e-09  OK
+W1     (52, 12)    -5.337228e-03 -5.337228e-03   1.94e-09  OK
+W1     (26, 11)     5.875574e-06  5.875567e-06   5.99e-07  OK
+W3     (11, 2)      4.663118e-03  4.663118e-03   1.89e-09  OK
+W3     (12, 2)      3.137707e-03  3.137707e-03   1.71e-09  OK
+W1     (10, 0)     -2.649670e-03 -2.649670e-03   2.65e-09  OK
+
+Passed: 10/10 (need >= 9) -> PASS
+
+=== Task 6: training ===
+  W=16 lr=0.001 epoch  1/50  loss 2.2986
+  W=16 lr=0.001 epoch  2/50  loss 2.2985
+  W=16 lr=0.001 epoch  3/50  loss 2.2984
+  W=16 lr=0.001 epoch  4/50  loss 2.2983
+  W=16 lr=0.001 epoch  5/50  loss 2.2982
+  W=16 lr=0.001 epoch  6/50  loss 2.2980
+  W=16 lr=0.001 epoch  7/50  loss 2.2979
+  W=16 lr=0.001 epoch  8/50  loss 2.2978
+  W=16 lr=0.001 epoch  9/50  loss 2.2977
+  W=16 lr=0.001 epoch 10/50  loss 2.2975
+  W=16 lr=0.001 epoch 11/50  loss 2.2974
+  W=16 lr=0.001 epoch 12/50  loss 2.2973
+  W=16 lr=0.001 epoch 13/50  loss 2.2971
+  W=16 lr=0.001 epoch 14/50  loss 2.2970
+  W=16 lr=0.001 epoch 15/50  loss 2.2969
+  W=16 lr=0.001 epoch 16/50  loss 2.2967
+  W=16 lr=0.001 epoch 17/50  loss 2.2966
+  W=16 lr=0.001 epoch 18/50  loss 2.2965
+  W=16 lr=0.001 epoch 19/50  loss 2.2963
+  W=16 lr=0.001 epoch 20/50  loss 2.2962
+  W=16 lr=0.001 epoch 21/50  loss 2.2960
+  W=16 lr=0.001 epoch 22/50  loss 2.2959
+  W=16 lr=0.001 epoch 23/50  loss 2.2958
+  W=16 lr=0.001 epoch 24/50  loss 2.2956
+  W=16 lr=0.001 epoch 25/50  loss 2.2955
+  W=16 lr=0.001 epoch 26/50  loss 2.2954
+  W=16 lr=0.001 epoch 27/50  loss 2.2952
+  W=16 lr=0.001 epoch 28/50  loss 2.2951
+  W=16 lr=0.001 epoch 29/50  loss 2.2949
+  W=16 lr=0.001 epoch 30/50  loss 2.2948
+  W=16 lr=0.001 epoch 31/50  loss 2.2947
+  W=16 lr=0.001 epoch 32/50  loss 2.2945
+  W=16 lr=0.001 epoch 33/50  loss 2.2944
+  W=16 lr=0.001 epoch 34/50  loss 2.2942
+  W=16 lr=0.001 epoch 35/50  loss 2.2941
+  W=16 lr=0.001 epoch 36/50  loss 2.2939
+  W=16 lr=0.001 epoch 37/50  loss 2.2938
+  W=16 lr=0.001 epoch 38/50  loss 2.2937
+  W=16 lr=0.001 epoch 39/50  loss 2.2935
+  W=16 lr=0.001 epoch 40/50  loss 2.2934
+  W=16 lr=0.001 epoch 41/50  loss 2.2932
+  W=16 lr=0.001 epoch 42/50  loss 2.2931
+  W=16 lr=0.001 epoch 43/50  loss 2.2929
+  W=16 lr=0.001 epoch 44/50  loss 2.2927
+  W=16 lr=0.001 epoch 45/50  loss 2.2926
+  W=16 lr=0.001 epoch 46/50  loss 2.2924
+  W=16 lr=0.001 epoch 47/50  loss 2.2923
+  W=16 lr=0.001 epoch 48/50  loss 2.2921
+  W=16 lr=0.001 epoch 49/50  loss 2.2920
+  W=16 lr=0.001 epoch 50/50  loss 2.2918
+  W=16 lr=0.01 epoch  1/50  loss 2.2975
+  W=16 lr=0.01 epoch  2/50  loss 2.2962
+  W=16 lr=0.01 epoch  3/50  loss 2.2948
+  W=16 lr=0.01 epoch  4/50  loss 2.2934
+  W=16 lr=0.01 epoch  5/50  loss 2.2918
+  W=16 lr=0.01 epoch  6/50  loss 2.2902
+  W=16 lr=0.01 epoch  7/50  loss 2.2883
+  W=16 lr=0.01 epoch  8/50  loss 2.2863
+  W=16 lr=0.01 epoch  9/50  loss 2.2842
+  W=16 lr=0.01 epoch 10/50  loss 2.2817
+  W=16 lr=0.01 epoch 11/50  loss 2.2791
+  W=16 lr=0.01 epoch 12/50  loss 2.2761
+  W=16 lr=0.01 epoch 13/50  loss 2.2727
+  W=16 lr=0.01 epoch 14/50  loss 2.2689
+  W=16 lr=0.01 epoch 15/50  loss 2.2646
+  W=16 lr=0.01 epoch 16/50  loss 2.2599
+  W=16 lr=0.01 epoch 17/50  loss 2.2547
+  W=16 lr=0.01 epoch 18/50  loss 2.2490
+  W=16 lr=0.01 epoch 19/50  loss 2.2427
+  W=16 lr=0.01 epoch 20/50  loss 2.2357
+  W=16 lr=0.01 epoch 21/50  loss 2.2279
+  W=16 lr=0.01 epoch 22/50  loss 2.2191
+  W=16 lr=0.01 epoch 23/50  loss 2.2095
+  W=16 lr=0.01 epoch 24/50  loss 2.1986
+  W=16 lr=0.01 epoch 25/50  loss 2.1868
+  W=16 lr=0.01 epoch 26/50  loss 2.1738
+  W=16 lr=0.01 epoch 27/50  loss 2.1593
+  W=16 lr=0.01 epoch 28/50  loss 2.1436
+  W=16 lr=0.01 epoch 29/50  loss 2.1261
+  W=16 lr=0.01 epoch 30/50  loss 2.1075
+  W=16 lr=0.01 epoch 31/50  loss 2.0872
+  W=16 lr=0.01 epoch 32/50  loss 2.0653
+  W=16 lr=0.01 epoch 33/50  loss 2.0415
+  W=16 lr=0.01 epoch 34/50  loss 2.0159
+  W=16 lr=0.01 epoch 35/50  loss 1.9881
+  W=16 lr=0.01 epoch 36/50  loss 1.9576
+  W=16 lr=0.01 epoch 37/50  loss 1.9247
+  W=16 lr=0.01 epoch 38/50  loss 1.8888
+  W=16 lr=0.01 epoch 39/50  loss 1.8497
+  W=16 lr=0.01 epoch 40/50  loss 1.8081
+  W=16 lr=0.01 epoch 41/50  loss 1.7637
+  W=16 lr=0.01 epoch 42/50  loss 1.7169
+  W=16 lr=0.01 epoch 43/50  loss 1.6700
+  W=16 lr=0.01 epoch 44/50  loss 1.6199
+  W=16 lr=0.01 epoch 45/50  loss 1.5702
+  W=16 lr=0.01 epoch 46/50  loss 1.5208
+  W=16 lr=0.01 epoch 47/50  loss 1.4724
+  W=16 lr=0.01 epoch 48/50  loss 1.4258
+  W=16 lr=0.01 epoch 49/50  loss 1.3805
+  W=16 lr=0.01 epoch 50/50  loss 1.3362
+  W=16 lr=0.1 epoch  1/50  loss 2.2822
+  W=16 lr=0.1 epoch  2/50  loss 2.2385
+  W=16 lr=0.1 epoch  3/50  loss 2.1184
+  W=16 lr=0.1 epoch  4/50  loss 1.8422
+  W=16 lr=0.1 epoch  5/50  loss 1.4123
+  W=16 lr=0.1 epoch  6/50  loss 1.1237
+  W=16 lr=0.1 epoch  7/50  loss 0.9515
+  W=16 lr=0.1 epoch  8/50  loss 0.8843
+  W=16 lr=0.1 epoch  9/50  loss 0.6822
+  W=16 lr=0.1 epoch 10/50  loss 0.4167
+  W=16 lr=0.1 epoch 11/50  loss 0.5015
+  W=16 lr=0.1 epoch 12/50  loss 0.3793
+  W=16 lr=0.1 epoch 13/50  loss 0.3454
+  W=16 lr=0.1 epoch 14/50  loss 0.2994
+  W=16 lr=0.1 epoch 15/50  loss 0.3977
+  W=16 lr=0.1 epoch 16/50  loss 0.2669
+  W=16 lr=0.1 epoch 17/50  loss 0.3832
+  W=16 lr=0.1 epoch 18/50  loss 0.2125
+  W=16 lr=0.1 epoch 19/50  loss 0.5582
+  W=16 lr=0.1 epoch 20/50  loss 0.3842
+  W=16 lr=0.1 epoch 21/50  loss 0.4314
+  W=16 lr=0.1 epoch 22/50  loss 0.3737
+  W=16 lr=0.1 epoch 23/50  loss 0.2052
+  W=16 lr=0.1 epoch 24/50  loss 0.1504
+  W=16 lr=0.1 epoch 25/50  loss 0.1448
+  W=16 lr=0.1 epoch 26/50  loss 0.2571
+  W=16 lr=0.1 epoch 27/50  loss 0.1419
+  W=16 lr=0.1 epoch 28/50  loss 0.1199
+  W=16 lr=0.1 epoch 29/50  loss 0.1900
+  W=16 lr=0.1 epoch 30/50  loss 0.1413
+  W=16 lr=0.1 epoch 31/50  loss 0.5146
+  W=16 lr=0.1 epoch 32/50  loss 0.1610
+  W=16 lr=0.1 epoch 33/50  loss 0.1884
+  W=16 lr=0.1 epoch 34/50  loss 0.3502
+  W=16 lr=0.1 epoch 35/50  loss 0.1896
+  W=16 lr=0.1 epoch 36/50  loss 0.1061
+  W=16 lr=0.1 epoch 37/50  loss 0.1459
+  W=16 lr=0.1 epoch 38/50  loss 0.1147
+  W=16 lr=0.1 epoch 39/50  loss 0.0842
+  W=16 lr=0.1 epoch 40/50  loss 0.0807
+  W=16 lr=0.1 epoch 41/50  loss 0.1410
+  W=16 lr=0.1 epoch 42/50  loss 0.1220
+  W=16 lr=0.1 epoch 43/50  loss 0.2821
+  W=16 lr=0.1 epoch 44/50  loss 0.0837
+  W=16 lr=0.1 epoch 45/50  loss 0.0596
+  W=16 lr=0.1 epoch 46/50  loss 0.0785
+  W=16 lr=0.1 epoch 47/50  loss 0.0591
+  W=16 lr=0.1 epoch 48/50  loss 0.2353
+  W=16 lr=0.1 epoch 49/50  loss 0.0572
+  W=16 lr=0.1 epoch 50/50  loss 0.0518
+  W=64 lr=0.001 epoch  1/50  loss 2.3134
+  W=64 lr=0.001 epoch  2/50  loss 2.3109
+  W=64 lr=0.001 epoch  3/50  loss 2.3085
+  W=64 lr=0.001 epoch  4/50  loss 2.3062
+  W=64 lr=0.001 epoch  5/50  loss 2.3039
+  W=64 lr=0.001 epoch  6/50  loss 2.3016
+  W=64 lr=0.001 epoch  7/50  loss 2.2993
+  W=64 lr=0.001 epoch  8/50  loss 2.2970
+  W=64 lr=0.001 epoch  9/50  loss 2.2948
+  W=64 lr=0.001 epoch 10/50  loss 2.2926
+  W=64 lr=0.001 epoch 11/50  loss 2.2903
+  W=64 lr=0.001 epoch 12/50  loss 2.2881
+  W=64 lr=0.001 epoch 13/50  loss 2.2859
+  W=64 lr=0.001 epoch 14/50  loss 2.2837
+  W=64 lr=0.001 epoch 15/50  loss 2.2816
+  W=64 lr=0.001 epoch 16/50  loss 2.2794
+  W=64 lr=0.001 epoch 17/50  loss 2.2773
+  W=64 lr=0.001 epoch 18/50  loss 2.2751
+  W=64 lr=0.001 epoch 19/50  loss 2.2730
+  W=64 lr=0.001 epoch 20/50  loss 2.2708
+  W=64 lr=0.001 epoch 21/50  loss 2.2686
+  W=64 lr=0.001 epoch 22/50  loss 2.2664
+  W=64 lr=0.001 epoch 23/50  loss 2.2643
+  W=64 lr=0.001 epoch 24/50  loss 2.2621
+  W=64 lr=0.001 epoch 25/50  loss 2.2599
+  W=64 lr=0.001 epoch 26/50  loss 2.2576
+  W=64 lr=0.001 epoch 27/50  loss 2.2554
+  W=64 lr=0.001 epoch 28/50  loss 2.2531
+  W=64 lr=0.001 epoch 29/50  loss 2.2508
+  W=64 lr=0.001 epoch 30/50  loss 2.2485
+  W=64 lr=0.001 epoch 31/50  loss 2.2461
+  W=64 lr=0.001 epoch 32/50  loss 2.2438
+  W=64 lr=0.001 epoch 33/50  loss 2.2414
+  W=64 lr=0.001 epoch 34/50  loss 2.2390
+  W=64 lr=0.001 epoch 35/50  loss 2.2366
+  W=64 lr=0.001 epoch 36/50  loss 2.2342
+  W=64 lr=0.001 epoch 37/50  loss 2.2317
+  W=64 lr=0.001 epoch 38/50  loss 2.2292
+  W=64 lr=0.001 epoch 39/50  loss 2.2267
+  W=64 lr=0.001 epoch 40/50  loss 2.2242
+  W=64 lr=0.001 epoch 41/50  loss 2.2216
+  W=64 lr=0.001 epoch 42/50  loss 2.2190
+  W=64 lr=0.001 epoch 43/50  loss 2.2163
+  W=64 lr=0.001 epoch 44/50  loss 2.2137
+  W=64 lr=0.001 epoch 45/50  loss 2.2110
+  W=64 lr=0.001 epoch 46/50  loss 2.2083
+  W=64 lr=0.001 epoch 47/50  loss 2.2056
+  W=64 lr=0.001 epoch 48/50  loss 2.2028
+  W=64 lr=0.001 epoch 49/50  loss 2.2000
+  W=64 lr=0.001 epoch 50/50  loss 2.1972
+  W=64 lr=0.01 epoch  1/50  loss 2.2927
+  W=64 lr=0.01 epoch  2/50  loss 2.2710
+  W=64 lr=0.01 epoch  3/50  loss 2.2488
+  W=64 lr=0.01 epoch  4/50  loss 2.2246
+  W=64 lr=0.01 epoch  5/50  loss 2.1978
+  W=64 lr=0.01 epoch  6/50  loss 2.1682
+  W=64 lr=0.01 epoch  7/50  loss 2.1348
+  W=64 lr=0.01 epoch  8/50  loss 2.0971
+  W=64 lr=0.01 epoch  9/50  loss 2.0545
+  W=64 lr=0.01 epoch 10/50  loss 2.0064
+  W=64 lr=0.01 epoch 11/50  loss 1.9520
+  W=64 lr=0.01 epoch 12/50  loss 1.8912
+  W=64 lr=0.01 epoch 13/50  loss 1.8233
+  W=64 lr=0.01 epoch 14/50  loss 1.7483
+  W=64 lr=0.01 epoch 15/50  loss 1.6671
+  W=64 lr=0.01 epoch 16/50  loss 1.5817
+  W=64 lr=0.01 epoch 17/50  loss 1.4928
+  W=64 lr=0.01 epoch 18/50  loss 1.4020
+  W=64 lr=0.01 epoch 19/50  loss 1.3115
+  W=64 lr=0.01 epoch 20/50  loss 1.2229
+  W=64 lr=0.01 epoch 21/50  loss 1.1389
+  W=64 lr=0.01 epoch 22/50  loss 1.0572
+  W=64 lr=0.01 epoch 23/50  loss 0.9852
+  W=64 lr=0.01 epoch 24/50  loss 0.9156
+  W=64 lr=0.01 epoch 25/50  loss 0.8517
+  W=64 lr=0.01 epoch 26/50  loss 0.7975
+  W=64 lr=0.01 epoch 27/50  loss 0.7470
+  W=64 lr=0.01 epoch 28/50  loss 0.7000
+  W=64 lr=0.01 epoch 29/50  loss 0.6588
+  W=64 lr=0.01 epoch 30/50  loss 0.6217
+  W=64 lr=0.01 epoch 31/50  loss 0.5883
+  W=64 lr=0.01 epoch 32/50  loss 0.5600
+  W=64 lr=0.01 epoch 33/50  loss 0.5279
+  W=64 lr=0.01 epoch 34/50  loss 0.5010
+  W=64 lr=0.01 epoch 35/50  loss 0.4783
+  W=64 lr=0.01 epoch 36/50  loss 0.4567
+  W=64 lr=0.01 epoch 37/50  loss 0.4357
+  W=64 lr=0.01 epoch 38/50  loss 0.4198
+  W=64 lr=0.01 epoch 39/50  loss 0.4020
+  W=64 lr=0.01 epoch 40/50  loss 0.3871
+  W=64 lr=0.01 epoch 41/50  loss 0.3729
+  W=64 lr=0.01 epoch 42/50  loss 0.3583
+  W=64 lr=0.01 epoch 43/50  loss 0.3458
+  W=64 lr=0.01 epoch 44/50  loss 0.3352
+  W=64 lr=0.01 epoch 45/50  loss 0.3250
+  W=64 lr=0.01 epoch 46/50  loss 0.3148
+  W=64 lr=0.01 epoch 47/50  loss 0.3055
+  W=64 lr=0.01 epoch 48/50  loss 0.2960
+  W=64 lr=0.01 epoch 49/50  loss 0.2884
+  W=64 lr=0.01 epoch 50/50  loss 0.2824
+  W=64 lr=0.1 epoch  1/50  loss 2.0291
+  W=64 lr=0.1 epoch  2/50  loss 1.3112
+  W=64 lr=0.1 epoch  3/50  loss 0.8019
+  W=64 lr=0.1 epoch  4/50  loss 0.4318
+  W=64 lr=0.1 epoch  5/50  loss 0.4108
+  W=64 lr=0.1 epoch  6/50  loss 0.2775
+  W=64 lr=0.1 epoch  7/50  loss 0.2137
+  W=64 lr=0.1 epoch  8/50  loss 0.1932
+  W=64 lr=0.1 epoch  9/50  loss 0.1956
+  W=64 lr=0.1 epoch 10/50  loss 0.1526
+  W=64 lr=0.1 epoch 11/50  loss 0.1391
+  W=64 lr=0.1 epoch 12/50  loss 0.1703
+  W=64 lr=0.1 epoch 13/50  loss 0.0982
+  W=64 lr=0.1 epoch 14/50  loss 0.1093
+  W=64 lr=0.1 epoch 15/50  loss 0.0861
+  W=64 lr=0.1 epoch 16/50  loss 0.1957
+  W=64 lr=0.1 epoch 17/50  loss 0.1534
+  W=64 lr=0.1 epoch 18/50  loss 0.0742
+  W=64 lr=0.1 epoch 19/50  loss 0.0861
+  W=64 lr=0.1 epoch 20/50  loss 0.0862
+  W=64 lr=0.1 epoch 21/50  loss 0.0854
+  W=64 lr=0.1 epoch 22/50  loss 0.1141
+  W=64 lr=0.1 epoch 23/50  loss 0.0589
+  W=64 lr=0.1 epoch 24/50  loss 0.0988
+  W=64 lr=0.1 epoch 25/50  loss 0.0436
+  W=64 lr=0.1 epoch 26/50  loss 0.0418
+  W=64 lr=0.1 epoch 27/50  loss 0.0506
+  W=64 lr=0.1 epoch 28/50  loss 0.0331
+  W=64 lr=0.1 epoch 29/50  loss 0.0352
+  W=64 lr=0.1 epoch 30/50  loss 0.0316
+  W=64 lr=0.1 epoch 31/50  loss 0.0341
+  W=64 lr=0.1 epoch 32/50  loss 0.1178
+  W=64 lr=0.1 epoch 33/50  loss 0.0336
+  W=64 lr=0.1 epoch 34/50  loss 0.0242
+  W=64 lr=0.1 epoch 35/50  loss 0.0543
+  W=64 lr=0.1 epoch 36/50  loss 0.0244
+  W=64 lr=0.1 epoch 37/50  loss 0.0547
+  W=64 lr=0.1 epoch 38/50  loss 0.0314
+  W=64 lr=0.1 epoch 39/50  loss 0.0551
+  W=64 lr=0.1 epoch 40/50  loss 0.0196
+  W=64 lr=0.1 epoch 41/50  loss 0.0189
+  W=64 lr=0.1 epoch 42/50  loss 0.0188
+  W=64 lr=0.1 epoch 43/50  loss 0.0172
+  W=64 lr=0.1 epoch 44/50  loss 0.0153
+  W=64 lr=0.1 epoch 45/50  loss 0.0170
+  W=64 lr=0.1 epoch 46/50  loss 0.0184
+  W=64 lr=0.1 epoch 47/50  loss 0.0153
+  W=64 lr=0.1 epoch 48/50  loss 0.0129
+  W=64 lr=0.1 epoch 49/50  loss 0.0231
+  W=64 lr=0.1 epoch 50/50  loss 0.0130
+
+Summary:
+W     lr        final loss  test acc
+16    0.001         2.2918    0.1315
+16    0.01          1.3362    0.5648
+16    0.1           0.0518    0.9407
+64    0.001         2.1972    0.3741
+64    0.01          0.2824    0.9148
+64    0.1           0.0130    0.9630
+
+=== Task 7: timing (batch 32, median of 100) ===
+W       forward, us   backward, us    b/f
+16             42.2           43.4   1.03
+64             88.6          111.4   1.26

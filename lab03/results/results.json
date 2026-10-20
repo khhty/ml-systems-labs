@@ -1,0 +1,45 @@
+{
+  "MLP": {
+    "params": 235146,
+    "hand_flops": 469504,
+    "thop_flops": 469504,
+    "latency_b1_ms": 0.17795000167097896,
+    "latency_b128_ms": 1.0397500009275973,
+    "test_acc": 0.8797,
+    "hand_layers": {
+      "Linear 784->256": 401408,
+      "Linear 256->128": 65536,
+      "Linear 128->10": 2560
+    }
+  },
+  "CNN": {
+    "params": 20490,
+    "hand_flops": 2063488,
+    "thop_flops": 2063488,
+    "latency_b1_ms": 0.49404999845137354,
+    "latency_b128_ms": 10.390650000772439,
+    "test_acc": 0.8893,
+    "hand_layers": {
+      "Conv 1->16, 28x28": 225792,
+      "Conv 16->32, 14x14": 1806336,
+      "Linear 1568->10": 31360
+    }
+  },
+  "Attention": {
+    "params": 70794,
+    "hand_flops": 2329856,
+    "thop_flops": 101632,
+    "latency_b1_ms": 1.2588999998115469,
+    "latency_b128_ms": 9.633400000893744,
+    "test_acc": 0.8285,
+    "hand_layers": {
+      "Patch projection 49->64": 100352,
+      "QKV projections (x2 layers)": 786432,
+      "Scores QK^T (x2 layers)": 65536,
+      "Attn x V (x2 layers)": 65536,
+      "Output projection (x2 layers)": 262144,
+      "FFN 64->128->64 (x2 layers)": 1048576,
+      "Head 64->10": 1280
+    }
+  }
+}

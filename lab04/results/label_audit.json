@@ -1,0 +1,6 @@
+{
+  "conflicting_feature_groups": 5,
+  "rows_in_conflicting_groups": 10,
+  "education_vs_education_num_consistent": true,
+  "sample50_range_violations": 0
+}
